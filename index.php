@@ -46,9 +46,11 @@ $idojarasok = Idojaras::osszes();
     <div>
     <?php
     foreach ($idojarasok as $idojaras) {
-        echo "Dátum: " . $idojaras->getDatum()->format("Y-m-d") .
+        echo "<br><article>Dátum: " . $idojaras->getDatum()->format("Y-m-d") .
             "<br>Hőfok: " . $idojaras->getHofok() . 
-            "<br>Leírás: " . $idojaras->getLeiras() . "<br><br>";
+            "<br>Leírás: " . $idojaras->getLeiras() . 
+            "<br><a href='szerkesztes.php?szerkesztesId=" . $idojaras->getId() . "
+            '><button>Szerkesztés</button></a></article>";
     }
     ?>
     </div>

@@ -38,6 +38,16 @@ class Idojaras {
         ]);
     }
 
+    public function szerkeszt(int $szerkesztId){
+        global $db;
+
+        $db->prepare("UPDATE adatok SET datum = :datum, hofok = :hofok, leiras = :leiras WHERE id LIKE $szerkesztId")
+            ->execute([":datum" => $this->datum->format("Y-m-d"),
+                        ":hofok" => $this->hofok,
+                        ":leiras" => $this->leiras
+        ]);
+    }
+
     public function getId() : ?int {
         return $this->id;
     }
